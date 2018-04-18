@@ -13,6 +13,16 @@
 		BD9211FA2087B26F00A82BD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD9211F92087B26F00A82BD8 /* Assets.xcassets */; };
 		BD9211FD2087B26F00A82BD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD9211FB2087B26F00A82BD8 /* LaunchScreen.storyboard */; };
 		BD9212082087B26F00A82BD8 /* StoneYourTopGamesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9212072087B26F00A82BD8 /* StoneYourTopGamesTests.swift */; };
+		BD9212162087C43100A82BD8 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9212152087C43100A82BD8 /* EndPointType.swift */; };
+		BD9212182087C4A100A82BD8 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9212172087C4A100A82BD8 /* HTTPMethod.swift */; };
+		BD92121A2087C4CE00A82BD8 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9212192087C4CE00A82BD8 /* HTTPTask.swift */; };
+		BD92121E2087C5A700A82BD8 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD92121D2087C5A700A82BD8 /* ParameterEncoding.swift */; };
+		BD9212202087C5DF00A82BD8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD92121F2087C5DF00A82BD8 /* NetworkError.swift */; };
+		BD9212222087C64C00A82BD8 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9212212087C64C00A82BD8 /* NetworkRouter.swift */; };
+		BD9212242087C6EC00A82BD8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9212232087C6EC00A82BD8 /* Router.swift */; };
+		BD9212262087CCF000A82BD8 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9212252087CCF000A82BD8 /* JSONParameterEncoder.swift */; };
+		BD9212282087CD8500A82BD8 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9212272087CD8500A82BD8 /* URLParameterEncoder.swift */; };
+		BD92122A2087CEE800A82BD8 /* MyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9212292087CEE800A82BD8 /* MyService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +46,16 @@
 		BD9212032087B26F00A82BD8 /* StoneYourTopGamesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StoneYourTopGamesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD9212072087B26F00A82BD8 /* StoneYourTopGamesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoneYourTopGamesTests.swift; sourceTree = "<group>"; };
 		BD9212092087B26F00A82BD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD9212152087C43100A82BD8 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		BD9212172087C4A100A82BD8 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		BD9212192087C4CE00A82BD8 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		BD92121D2087C5A700A82BD8 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		BD92121F2087C5DF00A82BD8 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		BD9212212087C64C00A82BD8 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		BD9212232087C6EC00A82BD8 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		BD9212252087CCF000A82BD8 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		BD9212272087CD8500A82BD8 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		BD9212292087CEE800A82BD8 /* MyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +97,7 @@
 		BD9211F12087B26D00A82BD8 /* StoneYourTopGames */ = {
 			isa = PBXGroup;
 			children = (
+				BD9212122087C3AE00A82BD8 /* Network */,
 				BD9211F22087B26D00A82BD8 /* AppDelegate.swift */,
 				BD9211F42087B26D00A82BD8 /* ViewController.swift */,
 				BD9211F62087B26D00A82BD8 /* Main.storyboard */,
@@ -94,6 +115,47 @@
 				BD9212092087B26F00A82BD8 /* Info.plist */,
 			);
 			path = StoneYourTopGamesTests;
+			sourceTree = "<group>";
+		};
+		BD9212122087C3AE00A82BD8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BD92121B2087C58E00A82BD8 /* Encoding */,
+				BD9212142087C41A00A82BD8 /* EndPoint */,
+				BD9212132087C3E500A82BD8 /* Service */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		BD9212132087C3E500A82BD8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BD9212172087C4A100A82BD8 /* HTTPMethod.swift */,
+				BD9212192087C4CE00A82BD8 /* HTTPTask.swift */,
+				BD9212292087CEE800A82BD8 /* MyService.swift */,
+				BD9212232087C6EC00A82BD8 /* Router.swift */,
+				BD9212212087C64C00A82BD8 /* NetworkRouter.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		BD9212142087C41A00A82BD8 /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				BD9212152087C43100A82BD8 /* EndPointType.swift */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		BD92121B2087C58E00A82BD8 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				BD92121D2087C5A700A82BD8 /* ParameterEncoding.swift */,
+				BD9212252087CCF000A82BD8 /* JSONParameterEncoder.swift */,
+				BD92121F2087C5DF00A82BD8 /* NetworkError.swift */,
+				BD9212272087CD8500A82BD8 /* URLParameterEncoder.swift */,
+			);
+			path = Encoding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +259,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD92121E2087C5A700A82BD8 /* ParameterEncoding.swift in Sources */,
+				BD9212282087CD8500A82BD8 /* URLParameterEncoder.swift in Sources */,
+				BD9212202087C5DF00A82BD8 /* NetworkError.swift in Sources */,
+				BD9212182087C4A100A82BD8 /* HTTPMethod.swift in Sources */,
+				BD92121A2087C4CE00A82BD8 /* HTTPTask.swift in Sources */,
+				BD9212242087C6EC00A82BD8 /* Router.swift in Sources */,
 				BD9211F52087B26D00A82BD8 /* ViewController.swift in Sources */,
+				BD9212222087C64C00A82BD8 /* NetworkRouter.swift in Sources */,
 				BD9211F32087B26D00A82BD8 /* AppDelegate.swift in Sources */,
+				BD92122A2087CEE800A82BD8 /* MyService.swift in Sources */,
+				BD9212262087CCF000A82BD8 /* JSONParameterEncoder.swift in Sources */,
+				BD9212162087C43100A82BD8 /* EndPointType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
