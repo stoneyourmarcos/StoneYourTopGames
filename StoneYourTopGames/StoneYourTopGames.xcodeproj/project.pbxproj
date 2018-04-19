@@ -23,6 +23,12 @@
 		BD9212262087CCF000A82BD8 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9212252087CCF000A82BD8 /* JSONParameterEncoder.swift */; };
 		BD9212282087CD8500A82BD8 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9212272087CD8500A82BD8 /* URLParameterEncoder.swift */; };
 		BD92122A2087CEE800A82BD8 /* MyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9212292087CEE800A82BD8 /* MyService.swift */; };
+		BD92122C2088E3A300A82BD8 /* EntityMock.json in Resources */ = {isa = PBXBuildFile; fileRef = BD92122B2088E3A300A82BD8 /* EntityMock.json */; };
+		BD92122F2088E66E00A82BD8 /* GameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD92122E2088E66E00A82BD8 /* GameEntity.swift */; };
+		BD9212322088E89F00A82BD8 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9212312088E89F00A82BD8 /* DataManager.swift */; };
+		BD9212352088E9F700A82BD8 /* StoneYourDataBase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD9212332088E9F700A82BD8 /* StoneYourDataBase.xcdatamodeld */; };
+		BD9212372088EB0300A82BD8 /* LogoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9212362088EB0300A82BD8 /* LogoEntity.swift */; };
+		BD9212392088EB0900A82BD8 /* ImageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9212382088EB0900A82BD8 /* ImageEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +62,12 @@
 		BD9212252087CCF000A82BD8 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
 		BD9212272087CD8500A82BD8 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		BD9212292087CEE800A82BD8 /* MyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyService.swift; sourceTree = "<group>"; };
+		BD92122B2088E3A300A82BD8 /* EntityMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EntityMock.json; sourceTree = "<group>"; };
+		BD92122E2088E66E00A82BD8 /* GameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEntity.swift; sourceTree = "<group>"; };
+		BD9212312088E89F00A82BD8 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		BD9212342088E9F700A82BD8 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		BD9212362088EB0300A82BD8 /* LogoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoEntity.swift; sourceTree = "<group>"; };
+		BD9212382088EB0900A82BD8 /* ImageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +109,7 @@
 		BD9211F12087B26D00A82BD8 /* StoneYourTopGames */ = {
 			isa = PBXGroup;
 			children = (
+				BD92122D2088E46200A82BD8 /* Model */,
 				BD9212122087C3AE00A82BD8 /* Network */,
 				BD9211F22087B26D00A82BD8 /* AppDelegate.swift */,
 				BD9211F42087B26D00A82BD8 /* ViewController.swift */,
@@ -113,6 +126,7 @@
 			children = (
 				BD9212072087B26F00A82BD8 /* StoneYourTopGamesTests.swift */,
 				BD9212092087B26F00A82BD8 /* Info.plist */,
+				BD92122B2088E3A300A82BD8 /* EntityMock.json */,
 			);
 			path = StoneYourTopGamesTests;
 			sourceTree = "<group>";
@@ -156,6 +170,26 @@
 				BD9212272087CD8500A82BD8 /* URLParameterEncoder.swift */,
 			);
 			path = Encoding;
+			sourceTree = "<group>";
+		};
+		BD92122D2088E46200A82BD8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BD9212302088E6CD00A82BD8 /* CoreDataManager */,
+				BD92122E2088E66E00A82BD8 /* GameEntity.swift */,
+				BD9212362088EB0300A82BD8 /* LogoEntity.swift */,
+				BD9212382088EB0900A82BD8 /* ImageEntity.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BD9212302088E6CD00A82BD8 /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				BD9212312088E89F00A82BD8 /* DataManager.swift */,
+				BD9212332088E9F700A82BD8 /* StoneYourDataBase.xcdatamodeld */,
+			);
+			path = CoreDataManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD92122C2088E3A300A82BD8 /* EntityMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,14 +297,19 @@
 				BD92121E2087C5A700A82BD8 /* ParameterEncoding.swift in Sources */,
 				BD9212282087CD8500A82BD8 /* URLParameterEncoder.swift in Sources */,
 				BD9212202087C5DF00A82BD8 /* NetworkError.swift in Sources */,
+				BD9212322088E89F00A82BD8 /* DataManager.swift in Sources */,
 				BD9212182087C4A100A82BD8 /* HTTPMethod.swift in Sources */,
 				BD92121A2087C4CE00A82BD8 /* HTTPTask.swift in Sources */,
+				BD9212352088E9F700A82BD8 /* StoneYourDataBase.xcdatamodeld in Sources */,
 				BD9212242087C6EC00A82BD8 /* Router.swift in Sources */,
 				BD9211F52087B26D00A82BD8 /* ViewController.swift in Sources */,
+				BD9212372088EB0300A82BD8 /* LogoEntity.swift in Sources */,
 				BD9212222087C64C00A82BD8 /* NetworkRouter.swift in Sources */,
 				BD9211F32087B26D00A82BD8 /* AppDelegate.swift in Sources */,
+				BD92122F2088E66E00A82BD8 /* GameEntity.swift in Sources */,
 				BD92122A2087CEE800A82BD8 /* MyService.swift in Sources */,
 				BD9212262087CCF000A82BD8 /* JSONParameterEncoder.swift in Sources */,
+				BD9212392088EB0900A82BD8 /* ImageEntity.swift in Sources */,
 				BD9212162087C43100A82BD8 /* EndPointType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,6 +575,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BD9212332088E9F700A82BD8 /* StoneYourDataBase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BD9212342088E9F700A82BD8 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = BD9212342088E9F700A82BD8 /* DataModel.xcdatamodel */;
+			path = StoneYourDataBase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BD9211E72087B26D00A82BD8 /* Project object */;
 }

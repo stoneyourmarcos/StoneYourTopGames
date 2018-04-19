@@ -1,0 +1,28 @@
+{
+    "top": [
+            {
+            "game": {
+                "name": "Fortnite",
+                "popularity": 239383,
+                "_id": 33214,
+                "giantbomb_id": 37030,
+                "box": {
+                    "large": "https://static-cdn.jtvnw.net/ttv-boxart/Fortnite-272x380.jpg",
+                    "medium": "https://static-cdn.jtvnw.net/ttv-boxart/Fortnite-136x190.jpg",
+                    "small": "https://static-cdn.jtvnw.net/ttv-boxart/Fortnite-52x72.jpg",
+                    "template": "https://static-cdn.jtvnw.net/ttv-boxart/Fortnite-{width}x{height}.jpg"
+                },
+                "logo": {
+                    "large": "https://static-cdn.jtvnw.net/ttv-logoart/Fortnite-240x144.jpg",
+                    "medium": "https://static-cdn.jtvnw.net/ttv-logoart/Fortnite-120x72.jpg",
+                    "small": "https://static-cdn.jtvnw.net/ttv-logoart/Fortnite-60x36.jpg",
+                    "template": "https://static-cdn.jtvnw.net/ttv-logoart/Fortnite-{width}x{height}.jpg"
+                },
+                "localized_name": "Fortnite",
+                "locale": "pt-br"
+            },
+            "viewers": 245120,
+            "channels": 10848
+            }
+            ]
+}
