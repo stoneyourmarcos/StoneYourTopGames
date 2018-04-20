@@ -10,7 +10,7 @@ struct DataManager {
         case logo = "LogoEntity"
     }
     
-    enum predicateType: String {
+    enum PredicateType: String {
         case equal = "=="
         case different = "<>"
         case AND = "AND"
@@ -79,12 +79,12 @@ struct DataManager {
         }
     }
     
-    func predicate(with id: Int?, key: String, type: predicateType) -> NSPredicate? {
+    func predicate(withId id: Int?, key: String, type: PredicateType) -> NSPredicate? {
         guard let id = id else { return nil }
         return NSPredicate(format: "\(key) \(type.rawValue) %d", id)
     }
     
-    func predicate(with value: String?, key: String, type: predicateType) -> NSPredicate? {
+    func predicate(withValue value: String?, key: String, type: PredicateType) -> NSPredicate? {
         guard let value = value,
             !value.isEmpty else {
                 return NSPredicate(format: "\(key) \(type.rawValue)")
@@ -98,5 +98,58 @@ struct DataManager {
             .urls(for: .documentDirectory,
                   in: .userDomainMask).last else { return }
         print("CoreData url: \(url)")
+    }
+}
+
+// MARK: - Extensions
+extension Data {
+    func toModel() -> GameModel? {
+        return try? JSONDecoder().decode(GameModel.self, from: self)
+    }
+}
+
+extension Collection {
+    
+    func noDuplicates() -> [GameModel]? {
+        let models = (self as? [GameModel] ?? [])
+        var result = [GameModel]()
+        for model in models {
+            let hasDuplicates = result.filter({ $0.game?.id == model.game?.id }).count > 0
+            if !hasDuplicates {
+                result.append(model)
+            }
+        }
+        return result
+    }
+    
+    func orderByViewers() -> [GameModel] {
+        let models = (self as? [GameModel] ?? [])
+        let result = models.sorted { $0.viewers > $1.viewers }
+        return result
+    }
+    
+    func toModel() -> GameModel? {
+        guard let model = try? JSONSerialization.data(withJSONObject: self, options: .prettyPrinted).toModel() else { return nil }
+        return model
+    }
+    
+    func toModels() -> [GameModel]? {
+        var result = [GameModel]()
+        for item in self {
+            guard let model = try? JSONSerialization.data(withJSONObject: item, options: .prettyPrinted).toModel(), let obj = model?.checkFavorite() else { continue }
+            result.append(obj)
+        }
+        return result
+    }
+    
+    func checkFavorites() -> [GameModel]? {
+        let models = self as? [GameModel]
+        guard let items = models, items.count > 0 else { return models }
+        var result = [GameModel]()
+        for model in items {
+            let item = model.checkFavorite()
+            result.append(item)
+        }
+        return result
     }
 }
