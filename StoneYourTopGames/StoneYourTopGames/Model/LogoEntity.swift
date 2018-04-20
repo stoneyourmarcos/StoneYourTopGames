@@ -1,9 +1,14 @@
-//
-//  LogoEntity.swift
-//  StoneYourTopGames
-//
-//  Created by Marcos Contente on 19/04/18.
-//  Copyright © 2018 brq. All rights reserved.
-//
-
 import Foundation
+import CoreData
+
+struct Image: Codable {
+    var small: String
+    var medium: String
+    var large: String
+    
+    init?(entity: ImageEntity?) {
+        small = entity?.small ?? ""
+        medium = entity?.medium ?? ""
+        large = entity?.large ?? ""
+    }
+}

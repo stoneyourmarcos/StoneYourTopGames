@@ -1,34 +1,54 @@
 import Foundation
 import CoreData
 
-struct GameEntity: Codable {
-    let name: String
-    let popularity: Int
-    let id: Int
-    let giantBombId: Int
-    let viewers: Int
-    let channels: Int
+class GameModel {
+    var game: Game?
+    var viewers: Int
+    var channels: Int
+    var isFavorited: Bool = false
+    var isRecorded: Bool = false
     
-    enum GameCodingKeys: String, CodingKey {
-        case name
-        case popularity
-        case id = "_id"
-        case giantBombId = "giantbomb_id"
-        case viewers
-        case channels
+    struct Game: Codable {
+        var id: Int
+        var giantbombId: Int
+        var popularity: Int
+        var name: String
+        var localizedName: String
+        var locale: String
+        var image: Image?
+        var logo: Logo?
+    }
+    
+    init?(entity: GameEntity) {
+        game = Game(entity: entity)
+        viewers = Int(entity.viewers)
+        channels = Int(entity.channels)
+        isFavorited = Bool(entity.isFavorite)
+        isRecorded = true
     }
 }
 
-extension GameEntity {
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: GameCodingKeys.self)
-        name = try container.decode(String.self, forKey: .name)
-        popularity = try container.decode(Int.self, forKey: .popularity)
-        id = try container.decode(Int.self, forKey: .id)
-        giantBombId = try container.decode(Int.self, forKey: .giantBombId)
-        viewers = try container.decode(Int.self, forKey: .viewers)
-        channels = try container.decode(Int.self, forKey: .channels)
+extension GameModel.Game {
+    fileprivate enum GameCodingKey: String, CodingKey {
+        case id = "_id"
+        case giantbombId
+        case popularity
+        case name
+        case localizedName = "localized_name"
+        case locale
+        case image = "box"
+        case logo
     }
     
-    
+    init?(entity: GameEntity) {
+        id = Int(entity.id)
+        giantbombId = Int(entity.giantbomb_id)
+        popularity = Int(entity.popularity)
+        name = entity.name ?? ""
+        localizedName = entity.localizedName ?? ""
+        locale = entity.locale ?? ""
+        image = Image(entity: entity.image)
+        logo = Logo(entity: entity.logo)
+    }
 }
+
